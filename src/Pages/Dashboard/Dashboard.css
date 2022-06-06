@@ -1,0 +1,17 @@
+/* .singin-input  {
+  padding: 0px !important;
+  height: 3rem !important;
+} */
+
+.ui-overview-card {
+  height: 160px;
+  width: 155px;
+}
+
+.ui-dashboard-orders-stats {
+  height: 200px;
+}
+
+.progress {
+   transform: rotate(90deg);
+}

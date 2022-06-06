@@ -16,7 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
-          {login && <Route path="/dashboard" element={<Dashboard />} />}
+          {/* {login && <Route path="/dashboard" element={<Dashboard />} />} */}
+         <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </>
