@@ -1,0 +1,7 @@
+.filters {
+  display: none;
+}
+
+button:focus-within > .filters {
+  display: block;
+}

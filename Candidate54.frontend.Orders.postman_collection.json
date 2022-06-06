@@ -1,0 +1,106 @@
+{
+  "info": {
+    "_postman_id": "18716139-4135-4968-99b3-794ca2217d6e",
+    "name": "Orders",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"candidate.54\",\n    \"password\": \"Password@54\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "13.76.214.165:8001/api/login",
+          "host": ["13", "76", "214", "165"],
+          "port": "8001",
+          "path": ["api", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Orders List",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlsiYzQ5MGRmYTgtZWJmMy00NTE5LWI1M2EtZDc1Y2I3NGJlMDUwIiwiVXJ2aXNoIiwiU2hhaCIsInVydmlzaC5zaGFoQHB1c2hwYWsuYWkiXSwiaWF0IjoxNjQ5NzUyODc0LCJleHAiOjE2ODEyODg4NzR9.13UfXk_CVjKSqyC5pq2HgQK6KKI_PPM886C0dZB5CtM",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "13.76.214.165:8001/api/orders?page=1&limit=15&order_status=",
+          "host": ["13", "76", "214", "165"],
+          "port": "8001",
+          "path": ["api", "orders"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "15"
+            },
+            {
+              "key": "order_status",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Orders Summary",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlsiYzQ5MGRmYTgtZWJmMy00NTE5LWI1M2EtZDc1Y2I3NGJlMDUwIiwiVXJ2aXNoIiwiU2hhaCIsInVydmlzaC5zaGFoQHB1c2hwYWsuYWkiXSwiaWF0IjoxNjQ5NzUyODc0LCJleHAiOjE2ODEyODg4NzR9.13UfXk_CVjKSqyC5pq2HgQK6KKI_PPM886C0dZB5CtM",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "13.76.214.165:8001/api/analytics/summary",
+          "host": ["13", "76", "214", "165"],
+          "port": "8001",
+          "path": ["api", "analytics", "summary"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Orders Last 7 Days",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlsiYzQ5MGRmYTgtZWJmMy00NTE5LWI1M2EtZDc1Y2I3NGJlMDUwIiwiVXJ2aXNoIiwiU2hhaCIsInVydmlzaC5zaGFoQHB1c2hwYWsuYWkiXSwiaWF0IjoxNjQ5NzUyODc0LCJleHAiOjE2ODEyODg4NzR9.13UfXk_CVjKSqyC5pq2HgQK6KKI_PPM886C0dZB5CtM",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "13.76.214.165:8001/api/analytics/last7Days",
+          "host": ["13", "76", "214", "165"],
+          "port": "8001",
+          "path": ["api", "analytics", "last7Days"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

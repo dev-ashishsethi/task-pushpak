@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { SignIn } from "./Components/SignIn/SignIn";
+import { Route, Routes } from "react-router-dom";
+import { Dashboard } from "./Pages/Dashboard/Dashboard";
+import { ToastContainer } from "react-toastify";
+import { useAuth } from "./Context/AuthContext";
+import { ForgotPassword } from "./Pages/Forgot Password/ForgotPassword";
 
 function App() {
+  const { login } = useAuth();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastContainer />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<SignIn />} />
+          <Route path="/forgotPassword" element={<ForgotPassword />} />
+          {login && <Route path="/dashboard" element={<Dashboard />} />}
+        </Routes>
+      </div>
+    </>
   );
 }
 
