@@ -48,7 +48,8 @@ export function SignIn() {
         }
       })
       .catch((error) => {
-        Toast("error", error.response.data.message);
+        console.log(error);
+        // Toast("error", error.response.data.message);
         throw error;
       });
   }
