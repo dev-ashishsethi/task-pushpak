@@ -13,5 +13,48 @@
 }
 
 .progress {
-   transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.blue {
+  color: #00a7ec;
+}
+.green {
+  color: #4fcbb9;
+}
+.yellow {
+  color: #ffcc43;
+}
+.orange {
+  color: #ff8e6c;
+}
+.black {
+  color: #3d4d4e;
+}
+
+.blue-bg {
+  background-color: #00a7ec;
+}
+.green-bg {
+  background-color: #4fcbb9;
+}
+.yellow-bg {
+  background-color: #ffcc43;
+}
+.orange-bg {
+  background-color: #ff8e6c;
+}
+.black-bg {
+  background-color: #3d4d4e;
+}
+
+
+.new-order-card-color{
+  background-color: #fef7e2;
+}
+.average-sale-card-color{
+  background-color: #e6eafe;
+}
+.total-earning-card-color{
+  background-color: #d6f3f4;
 }
