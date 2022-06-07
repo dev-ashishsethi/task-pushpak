@@ -29,7 +29,7 @@ export function SignIn() {
 
     axios({
       method: "POST",
-      url: "https://13.76.214.165:8001/api/login",
+      url: "http://13.76.214.165:8001/api/login",
       data: {
         username: loginCred?.username,
         password: loginCred?.password,
