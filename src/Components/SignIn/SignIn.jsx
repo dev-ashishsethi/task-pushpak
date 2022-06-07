@@ -29,7 +29,7 @@ export function SignIn() {
 
     axios({
       method: "POST",
-      url: "http://13.76.214.165:8001/api/login",
+      url: "https://13.76.214.165:8001/api/login",
       data: {
         username: loginCred?.username,
         password: loginCred?.password,
@@ -98,7 +98,10 @@ export function SignIn() {
         </p>
       </div> */}
 
-      <form onSubmit={loginHandler} className="border rounded ui-signin-form py-3 px-sm-5 px-3">
+      <form
+        onSubmit={loginHandler}
+        className="border rounded ui-signin-form py-3 px-sm-5 px-3"
+      >
         <h5 className="text-center text-decoration-underline fs-3">Sign In</h5>
         <div className="ui-signin-email my-2">
           <label htmlFor="email" className="fw-bold p-1">
