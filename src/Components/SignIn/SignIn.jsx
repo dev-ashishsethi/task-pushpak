@@ -39,7 +39,7 @@ export function SignIn() {
         console.log({ response });
         if (response.status === 200) {
           const token = sessionStorage.setItem("login", response.data.token);
-          setToken(token);
+          setToken(sessionStorage.getItem("login", response.data.token));
           Toast("success", response.data.message);
           setLogin(true);
           navigate("/dashboard");

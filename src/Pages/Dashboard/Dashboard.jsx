@@ -12,6 +12,7 @@ import {
 } from "../../assets/icons";
 import { Filter } from "../../Components/Filter/Filter";
 import { OrderTable } from "../../Components/OrderTable/OrderTable";
+import { useAuth } from "../../Context/AuthContext";
 import { useOrderList } from "../../Context/OrderListProvider";
 import { orderStatusFilter } from "../../utils/orderStatusFilter";
 import { sortbyPrice } from "../../utils/sortbyPrice";
@@ -25,6 +26,7 @@ export function Dashboard() {
   const [chartData, setChartData] = useState([]);
   const { radioState, setOrderList } = useOrderList();
   const [moreOrders, setMoreOrders] = useState(15);
+  const { token } = useAuth();
 
   const summaryColor = ["blue", "green", "yellow", "orange", "black"];
   const summaryBgColor = [
@@ -52,8 +54,7 @@ export function Dashboard() {
           url: "http://13.76.214.165:8001/api/analytics/summary",
           data: {},
           headers: {
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlsiYzQ5MGRmYTgtZWJmMy00NTE5LWI1M2EtZDc1Y2I3NGJlMDUwIiwiVXJ2aXNoIiwiU2hhaCIsInVydmlzaC5zaGFoQHB1c2hwYWsuYWkiXSwiaWF0IjoxNjQ5NzUyODc0LCJleHAiOjE2ODEyODg4NzR9.13UfXk_CVjKSqyC5pq2HgQK6KKI_PPM886C0dZB5CtM",
+            Authorization: token,
           },
         });
         setNewOrders(response.data.data.overview.new_orders[0].new_orders);
@@ -95,8 +96,7 @@ export function Dashboard() {
           method: "GET",
           url: "http://13.76.214.165:8001/api/analytics/last7Days",
           headers: {
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlsiYzQ5MGRmYTgtZWJmMy00NTE5LWI1M2EtZDc1Y2I3NGJlMDUwIiwiVXJ2aXNoIiwiU2hhaCIsInVydmlzaC5zaGFoQHB1c2hwYWsuYWkiXSwiaWF0IjoxNjQ5NzUyODc0LCJleHAiOjE2ODEyODg4NzR9.13UfXk_CVjKSqyC5pq2HgQK6KKI_PPM886C0dZB5CtM",
+            Authorization: token,
           },
         });
         const objKeys = Object?.keys(response.data.data.last7Days);
@@ -123,8 +123,7 @@ export function Dashboard() {
           method: "GET",
           url: `http://13.76.214.165:8001/api/orders?page=1&limit=${moreOrders}`,
           headers: {
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlsiYzQ5MGRmYTgtZWJmMy00NTE5LWI1M2EtZDc1Y2I3NGJlMDUwIiwiVXJ2aXNoIiwiU2hhaCIsInVydmlzaC5zaGFoQHB1c2hwYWsuYWkiXSwiaWF0IjoxNjQ5NzUyODc0LCJleHAiOjE2ODEyODg4NzR9.13UfXk_CVjKSqyC5pq2HgQK6KKI_PPM886C0dZB5CtM",
+            Authorization: token,
           },
         });
         let filteredData = orderStatusFilter(response.data.data, radioState);
